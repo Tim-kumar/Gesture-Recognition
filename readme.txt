@@ -1,0 +1,33 @@
+Objective:
+
+To build a feature in the smart-TV that can recognise five different gestures performed by the user which will help users control the TV without using a remote
+
+The gestures are continuously monitored by the webcam mounted on the TV. Each gesture corresponds to a specific command:
+
+Thumbs up:  Increase the volume
+Thumbs down: Decrease the volume
+Left swipe: 'Jump' backwards 10 seconds
+Right swipe: 'Jump' forward 10 seconds  
+Stop: Pause the movie
+
+
+https://drive.google.com/uc?id=1ehyrYBQ5rbQQe6yL4XbLWe3FMvuVUGiL
+
+The data is in a zip file. The zip file contains a 'train' and a 'val' folder with two CSV files for the two folders. These folders are in turn divided into subfolders where each subfolder represents a video of a particular gesture. Each subfolder, i.e. a video, contains 30 frames (or images). Note that all images in a particular video subfolder have the same dimensions but different videos may have different dimensions. Specifically, videos have two types of dimensions - either 360x360 or 120x160.
+
+Each row of the CSV file represents one video and contains three main pieces of information - the name of the subfolder containing the 30 images of the video, the name of the gesture and the numeric label (between 0-4) of the video.
+
+The training data consists of a few hundred videos categorised into one of the five classes. Each video (typically 2-3 seconds long) is divided into a sequence of 30 frames(images)
+
+A sample data set is attached in the repo
+
+
+
+Modelling:
+
+Following are the modelling techniques considered
+
+1) Conv3D
+2) Conv2D(time distributed) + RNN
+3) Using transfer learning for CNN + RNN
+
